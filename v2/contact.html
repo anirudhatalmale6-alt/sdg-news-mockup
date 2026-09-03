@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact us — SDG 24×7</title>
+<link rel="stylesheet" href="site.css">
+<style>
+.chero{background:linear-gradient(120deg,var(--g17),var(--g16));color:#fff;padding:44px 0}
+.chero h1{font-size:36px;line-height:1.14;letter-spacing:-.03em;margin:13px 0 11px;max-width:20ch}
+.chero p{font-size:16px;line-height:1.6;color:#CFE0EC;max-width:60ch}
+
+.cgrid{display:grid;grid-template-columns:minmax(0,1.35fr) 1fr;gap:44px;padding:38px 0 44px;align-items:start}
+
+.field{margin-bottom:18px}
+.field label{display:block;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#3B4C5D;margin-bottom:7px}
+.field input,.field select,.field textarea{
+  width:100%;font-family:inherit;font-size:14.5px;color:var(--ink);background:#fff;
+  border:1px solid #C9D4DE;border-radius:9px;padding:12px 13px}
+.field select{appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235B6B7C' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;background-size:12px;padding-right:38px}
+.field textarea{min-height:132px;resize:vertical;line-height:1.55}
+.field .hint{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.5}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.submit{background:var(--ink);color:#fff;font-weight:800;font-size:14.5px;padding:14px 26px;border:0;border-radius:9px;cursor:pointer}
+.privacy{font-size:12px;color:var(--muted);margin-top:13px;line-height:1.55;max-width:56ch}
+
+/* the panel that swaps with the dropdown */
+.ctx{border:1px solid var(--line);border-radius:12px;background:var(--soft);padding:18px;margin-bottom:18px}
+.ctx h5{font-size:13.5px;margin-bottom:7px}
+.ctx p{font-size:13px;color:var(--muted);line-height:1.6}
+.ctx .dl{display:inline-block;margin-top:11px;background:var(--g16);color:#fff;font-weight:800;font-size:12.5px;padding:10px 15px;border-radius:8px}
+
+.side .box{border:1px solid var(--line);border-radius:12px;padding:20px;margin-bottom:18px}
+.side h4{font-size:16px;letter-spacing:-.015em;margin-bottom:9px}
+.side p{font-size:13.5px;color:var(--muted);line-height:1.6}
+.side ul{margin:10px 0 0;padding-left:19px;font-size:13.5px;color:var(--muted);line-height:1.8}
+.rt{display:flex;gap:10px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+.rt:last-child{border:0}
+.rt b{flex:0 0 auto;width:26px;height:26px;border-radius:7px;display:grid;place-items:center;color:#fff;font-size:12px}
+
+@media(max-width:960px){ .cgrid{grid-template-columns:1fr;gap:30px} }
+@media(max-width:720px){ .chero h1{font-size:26px} .two{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+<div class="stripe">
+  <i style="background:var(--g1)"></i><i style="background:var(--g2)"></i><i style="background:var(--g3)"></i>
+  <i style="background:var(--g4)"></i><i style="background:var(--g5)"></i><i style="background:var(--g6)"></i>
+  <i style="background:var(--g7)"></i><i style="background:var(--g8)"></i><i style="background:var(--g9)"></i>
+  <i style="background:var(--g10)"></i><i style="background:var(--g11)"></i><i style="background:var(--g12)"></i>
+  <i style="background:var(--g13)"></i><i style="background:var(--g14)"></i><i style="background:var(--g15)"></i>
+  <i style="background:var(--g16)"></i><i style="background:var(--g17)"></i>
+</div>
+
+<header><div class="wrap top">
+  <div class="logo">SDG&nbsp;<span class="tw">24×7</span></div>
+  <nav><a>News</a><a>Goals</a><a>Projects</a><a>Multimedia</a><a>Events</a><a class="on">Contact&nbsp;us</a></nav>
+  <div class="search">Search goals, regions, topics…</div>
+  <div class="btn">Subscribe</div>
+  <div class="burger">☰</div>
+</div></header>
+
+<div class="chero"><div class="wrap">
+  <span class="kicker" style="background:rgba(255,255,255,.18)">Contact</span>
+  <h1>Get in touch with SDG 24×7</h1>
+  <p>Whether you want to advertise, send us a story from your part of the world, or ask something else entirely — pick the reason below and the form will adjust to it.</p>
+</div></div>
+
+<div class="wrap"><div class="cgrid">
+  <div>
+    <div class="shead"><h2>Send us a message</h2></div>
+
+    <form onsubmit="return false">
+      <div class="field">
+        <label for="reason">What is this about?</label>
+        <select id="reason">
+          <option value="ad">1. Advertise with us</option>
+          <option value="story">2. Share your SDG news or story</option>
+          <option value="other">3. Others</option>
+        </select>
+      </div>
+
+      <!-- swaps with the dropdown -->
+      <div class="ctx" id="ctx-ad">
+        <h5>Advertising and sponsorship</h5>
+        <p>Tell us who you are trying to reach and which of the 17 goals you work on. Our media pack sets out every placement on the site and in the newsletter, along with how we label paid content.</p>
+        <span class="dl">↓ Download the media pack (PDF)</span>
+      </div>
+      <div class="ctx" id="ctx-story" hidden>
+        <h5>Sending us a story</h5>
+        <p>We take tips, finished articles and project updates from anywhere in the world. Say which goal it relates to and roughly where it happened, and attach anything you have — we will come back to you either way.</p>
+      </div>
+      <div class="ctx" id="ctx-other" hidden>
+        <h5>Anything else</h5>
+        <p>Corrections, partnership ideas, data questions, or a note about something we got wrong. All of it lands in the same inbox and gets read.</p>
+      </div>
+
+      <div class="two">
+        <div class="field"><label for="nm">Your name</label><input id="nm" placeholder="Full name"></div>
+        <div class="field"><label for="em">Email</label><input id="em" type="email" placeholder="you@organisation.org"></div>
+      </div>
+
+      <div class="two">
+        <div class="field"><label for="org" id="lab-org">Organisation</label><input id="org" placeholder="Company, NGO or publication"></div>
+        <div class="field">
+          <label for="goal">Related goal (optional)</label>
+          <select id="goal">
+            <option>Not specific to one goal</option>
+            <option>Goal 1 · No Poverty</option><option>Goal 2 · Zero Hunger</option>
+            <option>Goal 3 · Good Health</option><option>Goal 4 · Quality Education</option>
+            <option>Goal 5 · Gender Equality</option><option>Goal 6 · Clean Water</option>
+            <option>Goal 7 · Clean Energy</option><option>Goal 8 · Decent Work</option>
+            <option>Goal 9 · Innovation</option><option>Goal 10 · Reduced Inequality</option>
+            <option>Goal 11 · Cities</option><option>Goal 12 · Consumption</option>
+            <option>Goal 13 · Climate Action</option><option>Goal 14 · Life Below Water</option>
+            <option>Goal 15 · Life on Land</option><option>Goal 16 · Peace &amp; Justice</option>
+            <option>Goal 17 · Partnerships</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="msg" id="lab-msg">Your message</label>
+        <textarea id="msg" placeholder="Tell us what you need."></textarea>
+        <div class="hint" id="hint-msg">Include a rough budget and timing if you have them — it saves a round of emails.</div>
+      </div>
+
+      <button class="submit">Send message</button>
+      <div class="privacy">We use what you send here only to reply to you. We do not sell or share contact details, and we do not add you to the newsletter unless you ask.</div>
+    </form>
+  </div>
+
+  <div class="side">
+    <div class="box">
+      <h4>Where your message goes</h4>
+      <div class="rt"><b style="background:var(--g9)">1</b><div><strong>Advertise with us</strong><br><span style="color:var(--muted)">Goes to the commercial inbox. You get the media pack straight away.</span></div></div>
+      <div class="rt"><b style="background:var(--g4)">2</b><div><strong>Share your SDG news or story</strong><br><span style="color:var(--muted)">Goes to the editorial inbox and is read by a person, not a filter.</span></div></div>
+      <div class="rt"><b style="background:var(--g17)">3</b><div><strong>Others</strong><br><span style="color:var(--muted)">General enquiries, corrections and partnerships.</span></div></div>
+    </div>
+
+    <div class="box">
+      <h4>Advertising with us</h4>
+      <p>Everything a buyer needs is in one PDF — the six placements available, where each one sits on the page, and our rules on labelling paid content.</p>
+      <ul>
+        <li>Leaderboard</li>
+        <li>In-feed native</li>
+        <li>Article sidebar</li>
+        <li>Sponsored article</li>
+        <li>Newsletter sponsorship</li>
+        <li>Founding partner</li>
+      </ul>
+      <span class="ctx dl" style="display:inline-block;margin-top:14px;background:var(--g16);color:#fff;font-weight:800;font-size:12.5px;padding:10px 15px;border-radius:8px;border:0">↓ Download the media pack (PDF)</span>
+    </div>
+
+    <div class="box">
+      <h4>Response times</h4>
+      <p>Advertising enquiries are answered within two working days. Story tips are read daily; we only come back to you if we intend to use it or need more detail.</p>
+    </div>
+  </div>
+</div></div>
+
+<footer><div class="wrap fgrid">
+  <div>
+    <div class="fbrand">SDG 24×7</div>
+    <div style="max-width:34ch;line-height:1.55">Your one-stop portal for the 17 UN Sustainable Development Goals — news, data, projects and tools for changemakers.</div>
+  </div>
+  <div><h6>Goals</h6><ul><li>People (1–6)</li><li>Planet (13–15)</li><li>Prosperity (7–12)</li><li>Peace &amp; Partnership</li></ul></div>
+  <div><h6>Sections</h6><ul><li>News</li><li>Projects</li><li>Multimedia</li><li>Events</li><li>Data &amp; Progress</li></ul></div>
+  <div><h6>About</h6><ul><li>Who we are</li><li>Take Action</li><li>Resources</li><li>Contribute</li><li>Contact us</li></ul></div>
+</div></footer>
+
+<script>
+var COPY = {
+  ad:    {org:"Organisation",              msg:"Your message",
+          hint:"Include a rough budget and timing if you have them — it saves a round of emails."},
+  story: {org:"Organisation (optional)",   msg:"Your story or tip",
+          hint:"Where did it happen, and how do you know? Links or attachments welcome."},
+  other: {org:"Organisation (optional)",   msg:"Your message",
+          hint:"As much or as little detail as you like."}
+};
+var sel = document.getElementById('reason');
+function sync(){
+  var v = sel.value;
+  ['ad','story','other'].forEach(function(k){
+    document.getElementById('ctx-'+k).hidden = (k !== v);
+  });
+  document.getElementById('lab-org').textContent  = COPY[v].org;
+  document.getElementById('lab-msg').textContent  = COPY[v].msg;
+  document.getElementById('hint-msg').textContent = COPY[v].hint;
+}
+sel.addEventListener('change', sync);
+sync();
+</script>
+</body>
+</html>
