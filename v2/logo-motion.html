@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rotating logo — how it would work</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#0C1826;background:#fff;padding:26px 30px}
+h1{font-size:21px;letter-spacing:-.02em;margin-bottom:5px}
+.sub{font-size:13px;color:#5B6B7C;margin-bottom:22px;line-height:1.55;max-width:100ch}
+.row{display:grid;grid-template-columns:158px 1fr 260px;gap:22px;align-items:center;
+     border:1px solid #E3E8EE;border-radius:12px;padding:20px;margin-bottom:14px}
+.lab{font-size:12px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#5B6B7C}
+.lab b{display:block;font-size:15px;letter-spacing:-.01em;text-transform:none;color:#0C1826;margin-top:5px}
+.stage{display:flex;align-items:center;gap:34px;flex-wrap:wrap}
+.dark{background:#0C1826;border-radius:9px;padding:12px 16px;display:flex;align-items:center}
+.tiny{font-size:12px;color:#5B6B7C;line-height:1.55}
+.wm{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;white-space:nowrap}
+
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes sweep{to{stroke-dashoffset:-119}}
+@keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
+.spin{animation:spin 14s linear infinite;transform-origin:50% 50%}
+.sweep{animation:sweep 3.2s linear infinite}
+.p1{animation:pulse 2.4s ease-in-out infinite}
+.p2{animation:pulse 2.4s ease-in-out .5s infinite}
+
+/* anyone who has asked their device to reduce motion sees it stopped */
+@media(prefers-reduced-motion:reduce){ .spin,.sweep,.p1,.p2{animation:none} }
+.note{border:1px solid #CFE3F2;background:#F4FAFF;border-radius:12px;padding:16px 18px;font-size:13px;color:#24506E;line-height:1.6;margin-top:18px}
+</style></head>
+<body>
+
+<h1>Yes — the rotation is added in code, not in the file</h1>
+<div class="sub">Your Canva export contains no animation at all: no animate tags, no keyframes, no script. That is normal — Canva only exports movement as MP4 or GIF, never as an animated SVG. It doesn't matter. I take the still vector shapes and add the motion on the site, which is better anyway: it stays razor-sharp, weighs nothing, and I can switch it off for people who need it off. Below are three ways it can move. These are live, not videos.</div>
+
+<div class="row">
+  <div class="lab">Option B<b>Sweeping clock</b></div>
+  <div class="stage">
+    <div class="wm" style="font-size:27px">
+      <svg width="48" height="48" viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="#19486A"/>
+        <circle cx="32" cy="32" r="19" fill="none" stroke="#4EC3F0" stroke-width="4"/>
+        <circle class="sweep" cx="32" cy="32" r="19" fill="none" stroke="#56C02B" stroke-width="4"
+                stroke-dasharray="30 89" stroke-linecap="round" transform="rotate(-90 32 32)"/>
+        <path d="M32 21v12l8 5" fill="none" stroke="#fff" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>SDG&nbsp;<span style="color:#0A97D9">24×7</span></div>
+    <div class="dark"><div class="wm" style="font-size:18px;color:#fff">
+      <svg width="32" height="32" viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="#fff"/>
+        <circle cx="32" cy="32" r="19" fill="none" stroke="#0A97D9" stroke-width="4"/>
+        <circle class="sweep" cx="32" cy="32" r="19" fill="none" stroke="#56C02B" stroke-width="4"
+                stroke-dasharray="30 89" stroke-linecap="round" transform="rotate(-90 32 32)"/>
+        <path d="M32 21v12l8 5" fill="none" stroke="#19486A" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>SDG&nbsp;<span style="color:#4EC3F0">24×7</span></div></div>
+  </div>
+  <div class="tiny">The green arc travels round the dial like a second hand. Continuous, but small and quiet — it does not fight the headlines.</div>
+</div>
+
+<div class="row">
+  <div class="lab">Alternative<b>Rotating segment ring</b></div>
+  <div class="stage">
+    <div class="wm" style="font-size:27px">
+      <svg width="48" height="48" viewBox="0 0 64 64">
+        <g class="spin">
+          <g stroke-width="7" fill="none" stroke-linecap="round">
+            <path d="M32 8a24 24 0 0 1 20.8 12" stroke="#0A97D9"/>
+            <path d="M55.2 26a24 24 0 0 1-8 26" stroke="#56C02B"/>
+            <path d="M43 55a24 24 0 0 1-27.4-3.6" stroke="#FCC30B"/>
+            <path d="M11.6 47A24 24 0 0 1 26.4 8.7" stroke="#19486A"/>
+          </g>
+        </g>
+      </svg>SDG&nbsp;<span style="color:#0A97D9">24×7</span></div>
+    <div class="dark"><div class="wm" style="font-size:18px;color:#fff">
+      <svg width="32" height="32" viewBox="0 0 64 64">
+        <g class="spin">
+          <g stroke-width="7" fill="none" stroke-linecap="round">
+            <path d="M32 8a24 24 0 0 1 20.8 12" stroke="#4EC3F0"/>
+            <path d="M55.2 26a24 24 0 0 1-8 26" stroke="#8EE06C"/>
+            <path d="M43 55a24 24 0 0 1-27.4-3.6" stroke="#FCC30B"/>
+            <path d="M11.6 47A24 24 0 0 1 26.4 8.7" stroke="#fff"/>
+          </g>
+        </g>
+      </svg>SDG&nbsp;<span style="color:#4EC3F0">24×7</span></div></div>
+  </div>
+  <div class="tiny">Closest to the rotating ring you had in mind — but only four open segments, so it reads as a ring of its own rather than the UN's seventeen-segment wheel.</div>
+</div>
+
+<div class="row">
+  <div class="lab">Option C<b>Pulsing broadcast</b></div>
+  <div class="stage">
+    <div class="wm" style="font-size:27px">
+      <svg width="48" height="48" viewBox="0 0 64 64">
+        <circle cx="20" cy="44" r="6.5" fill="#19486A"/>
+        <path class="p1" d="M20 30a14 14 0 0 1 14 14" fill="none" stroke="#0A97D9" stroke-width="6" stroke-linecap="round"/>
+        <path class="p2" d="M20 18a26 26 0 0 1 26 26" fill="none" stroke="#56C02B" stroke-width="6" stroke-linecap="round"/>
+      </svg>SDG&nbsp;<span style="color:#0A97D9">24×7</span></div>
+    <div class="dark"><div class="wm" style="font-size:18px;color:#fff">
+      <svg width="32" height="32" viewBox="0 0 64 64">
+        <circle cx="20" cy="44" r="6.5" fill="#fff"/>
+        <path class="p1" d="M20 30a14 14 0 0 1 14 14" fill="none" stroke="#4EC3F0" stroke-width="6" stroke-linecap="round"/>
+        <path class="p2" d="M20 18a26 26 0 0 1 26 26" fill="none" stroke="#8EE06C" stroke-width="6" stroke-linecap="round"/>
+      </svg>SDG&nbsp;<span style="color:#4EC3F0">24×7</span></div></div>
+  </div>
+  <div class="tiny">The two arcs fade in and out in sequence, like a signal going out. Cheapest on the eye of the three.</div>
+</div>
+
+<div class="note">
+  <b>Two practical warnings before you commit to constant movement.</b><br>
+  A logo that never stops moving is the one element on every page that always draws the eye, and on a news site you want that eye on the headline. My advice is to let it animate once on page load and then rest — or keep it slow, like the sweeping clock above.<br><br>
+  Second, some people get motion sickness or migraines from looped animation, and their device carries a "reduce motion" setting to say so. Every option on this page already respects it: turn that setting on and the movement stops by itself. That is a few lines of CSS, and it is the difference between a professional build and an amateur one.
+</div>
+</body></html>
