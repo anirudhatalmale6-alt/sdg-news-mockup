@@ -30,8 +30,11 @@
 .lead p{font-size:14.5px;color:var(--muted);line-height:1.6}
 .lead .by{font-size:12.5px;color:var(--muted);margin-top:13px}
 
-.targets{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.tgt{border:1px solid var(--line);border-radius:11px;padding:16px 17px;display:flex;gap:13px;align-items:flex-start}
+/* target lengths vary wildly once quoted verbatim, so pack rather than grid -
+   a grid row stretches the short card to match the tall one and leaves a dead box */
+.targets{column-count:2;column-gap:14px}
+.tgt{border:1px solid var(--line);border-radius:11px;padding:16px 17px;display:flex;gap:13px;
+  align-items:flex-start;break-inside:avoid;margin-bottom:14px}
 .tgt b{flex:0 0 auto;background:var(--gg);color:#fff;font-size:13px;font-weight:800;padding:5px 9px;border-radius:6px}
 .tgt span{font-size:14.5px;line-height:1.55;color:#3B4C5D}
 
@@ -51,7 +54,7 @@
   .lead{grid-template-columns:1fr}
   .lead .ltx{padding:22px}
   .lead .lph{min-height:210px}
-  .targets{grid-template-columns:1fr}
+  .targets{column-count:1}
   .prog{grid-template-columns:1fr;gap:22px}
   .rel{grid-template-columns:repeat(2,1fr)}
 }
@@ -102,11 +105,11 @@
   <section>
     <div class="shead"><h2>The targets under Goal 13</h2><a>Source: UN Global Indicator Framework →</a></div>
     <div class="targets">
-      <div class="tgt"><b>13.1</b><span>Strengthen resilience and adaptive capacity to climate-related hazards and natural disasters in all countries.</span></div>
-      <div class="tgt"><b>13.2</b><span>Integrate climate change measures into national policies, strategies and planning.</span></div>
-      <div class="tgt"><b>13.3</b><span>Improve education, awareness-raising and human and institutional capacity on climate change mitigation, adaptation, impact reduction and early warning.</span></div>
-      <div class="tgt"><b>13.a</b><span>Implement the commitment by developed-country parties to the UNFCCC to mobilize $100 billion a year to address the needs of developing countries.</span></div>
-      <div class="tgt"><b>13.b</b><span>Promote mechanisms for raising capacity for effective climate change-related planning and management in least developed countries and small island developing states.</span></div>
+      <div class="tgt"><b>13.1</b><span>Strengthen resilience and adaptive capacity to climate-related hazards and natural disasters in all countries</span></div>
+      <div class="tgt"><b>13.2</b><span>Integrate climate change measures into national policies, strategies and planning</span></div>
+      <div class="tgt"><b>13.3</b><span>Improve education, awareness-raising and human and institutional capacity on climate change mitigation, adaptation, impact reduction and early warning</span></div>
+      <div class="tgt"><b>13.a</b><span>Implement the commitment undertaken by developed-country parties to the United Nations Framework Convention on Climate Change to a goal of mobilizing jointly $100 billion annually by 2020 from all sources to address the needs of developing countries in the context of meaningful mitigation actions and transparency on implementation and fully operationalize the Green Climate Fund through its capitalization as soon as possible</span></div>
+      <div class="tgt"><b>13.b</b><span>Promote mechanisms for raising capacity for effective climate change-related planning and management in least developed countries and small island developing States, including focusing on women, youth and local and marginalized communities</span></div>
     </div>
   </section>
 
